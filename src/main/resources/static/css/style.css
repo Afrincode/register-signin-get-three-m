@@ -16,3 +16,14 @@ body{
 .nav-ul{
 	float:right
 }
+.my-card{
+	padding:20px;
+	background:#FFFFFF;
+}
+.reg-sec{
+	padding-top:80px;
+}
+.btn-pad{
+	padding-top:15px;
+	padding-bottom: 15px;
+}

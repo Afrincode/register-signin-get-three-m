@@ -3,12 +3,72 @@
 
 	<head>
 		<meta charset="UTF-8" />
-		<title>Sign in Page</title>
+		<title>Signin Page</title>
 	</head>
 	
 	<body>
-		<section>
-			<h1>this is signin page</h1>
+		<section class="reg-sec">
+			<div class="container">
+			   <div class="row">
+			
+				<div class="col-md-6 offset-md-3">
+		    	  
+		    	   <div class="my-card">
+		    	  
+		    	       <h1 class="text-center">Sign in</h1>
+		    	       
+						<form action="" th:action="@{/do_sign}" method="POST" th:object="${user}">
+									  
+							   <!--email field-->
+						     
+							 <div class="mb-3">
+							    <label for="email_field" class="form-label">Your Email</label>
+							   
+							    <input 
+							    name="email"
+							     type="email"
+							     class="form-control" 
+							     id="email_field" 
+							     aria-describedby="emailHelp"
+							     placeholder="Enter here"
+							     required
+							     th:value="${user.email}"/>
+							     
+							  </div>	
+							  
+							  
+							   <!--password field-->
+						     
+							 <div class="mb-3">
+							    <label for="password_field" class="form-label">Password</label>
+							   
+							    <input 
+							    name="password"
+							     type="password"
+							     class="form-control" 
+							     id="password_field" 
+							     aria-describedby="emailHelp"
+							     placeholder="Enter here"
+							     required
+								/>
+							     
+							  </div>	
+							  
+							  <div class="container text-center btn-pad">
+							  
+							  		<button type="submit" class="btn bg-primary text-white">SIGN IN
+							  		</button>
+							  </div>
+							  					
+						
+						</form>
+					
+					
+					</div>
+				</div>
+			
+			    </div>
+		     </div>
 		</section>
 	</body>
 </html>

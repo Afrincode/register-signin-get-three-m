@@ -14,6 +14,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="USER")
 public class User 
 {
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+				+ "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
