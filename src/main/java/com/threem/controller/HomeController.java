@@ -43,31 +43,35 @@ public class HomeController
 	}
 	
 	//handler for registering user
-	@RequestMapping(value="/do_register",method=RequestMethod.POST)
-	public String registerUser(@ModelAttribute("user") User user,Model model,RedirectAttributes redirAttrs)
-	{
-		
-		User result=this.userRepository.save(user);
-		model.addAttribute("user",result);
-		System.out.println("Result"+result);
-		System.out.println("User"+user);
-		
-		redirAttrs.addFlashAttribute("success", "Registered successfully.");
+		@RequestMapping(value="/do_register",method=RequestMethod.POST)
+		public String registerUser(@ModelAttribute("user") User user,Model model,RedirectAttributes redirAttrs)
+		{
+			
+			User result=this.userRepository.save(user);
+			model.addAttribute("user",result);
+			System.out.println("Result"+result);
+			System.out.println("User"+user);
+			System.out.println();
+			
+			//redirAttrs.addFlashAttribute("success", "Registered successfully.");
 
-		return "redirect:/register/";
-		 
-	}
+			return "redirect:/register/";
+			 
+		}
+		
+		//	
+//		@RequestMapping(value="/do_signin",method=RequestMethod.POST)
+//		public String signinUser(@ModelAttribute("user") User user,Model model)
+//		{
+//			
+//			model.addAttribute("user",user);
+//			System.out.println("User in signing"+user);
+//			
+//			return "dashboard";
+//			
+//			
+//		}
+
 	
-//	@RequestMapping(value="/do_signin",method=RequestMethod.POST)
-//	public String signinUser(@ModelAttribute("user") User user,Model model)
-//	{
-//		
-//		model.addAttribute("user",user);
-//		System.out.println("User in signing"+user);
-//		
-//		return "dashboard";
-//		
-//		
-//	}
 
 }
